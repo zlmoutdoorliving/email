@@ -1,0 +1,12 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Mike Lockemy - signature test</title></head>
+<body style="margin:16px;background:#fff;font-family:-apple-system,Arial,sans-serif">
+<button onclick="copySig()" style="font-size:18px;font-weight:600;padding:12px 22px;border-radius:10px;border:0;background:#ff6a13;color:#fff;margin-bottom:8px">Copy signature</button>
+<p id="msg" style="font-size:15px;color:#555;margin:6px 0 16px">Single-image test version.</p>
+<div id="sig" contenteditable="true" style="outline:none"><a href="https://zlmoutdoorliving.com"><img src="https://email.zlmoutdoorliving.com/card-animated.gif" width="340" alt="Mike Lockemy - Administrative Coordinator - ZLM Outdoor Living" style="width:340px;height:auto;border:0;"></a></div>
+<script>
+function copySig(){var el=document.getElementById('sig'),msg=document.getElementById('msg');
+function fallback(){var r=document.createRange();r.selectNodeContents(el);var s=window.getSelection();s.removeAllRanges();s.addRange(r);var ok=false;try{ok=document.execCommand('copy');}catch(e){}msg.textContent=ok?'Copied!':'Selected - tap Copy in the menu.';}
+if(navigator.clipboard&&window.ClipboardItem){navigator.clipboard.write([new ClipboardItem({'text/html':new Blob([el.innerHTML],{type:'text/html'}),'text/plain':new Blob(['Mike Lockemy - ZLM Outdoor Living'],{type:'text/plain'})})]).then(function(){msg.textContent='Copied!';},fallback);}else{fallback();}}
+</script>
+</body></html>
